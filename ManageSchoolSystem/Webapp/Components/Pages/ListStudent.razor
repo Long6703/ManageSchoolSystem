@@ -1,0 +1,132 @@
+﻿﻿
+@page "/studentList"
+@using Share.gPRCContracts
+@using AutoMapper
+@using Share.ViewModel
+@inject IUserService UserService
+@inject IMapper _mapper
+@inject IMessageService _message
+@rendermode InteractiveServer
+
+<style>
+    body {
+    }
+
+    .custom-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .custom-table th,
+        .custom-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+    .custom-input {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 5px;
+        margin: 0;
+        transition: box-shadow 0.3s;
+    }
+
+        .custom-input:focus {
+            box-shadow: 0 0 5px #007bff;
+        }
+
+    .modal-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+</style>
+
+<div style="display:flex; justify-content:space-between;margin-bottom:20px">
+    <h3>List Student</h3>
+    <CreatStudent OnStudentCreated="OnStudentCreated"></CreatStudent>
+</div>
+
+<ListClass Classs="@listclass" OnCheckboxChanged="HandleCheckboxChanged"></ListClass>
+<Searching @ref="searchComponent" TItem="UserViewModel" OnSearchTermChanged="HandleSearchResults"></Searching>
+<table class="table table-striped custom-table">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>ClassName</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in list)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td><input type="text" @bind="@user.DisplayName" class="form-control custom-input" /></td>
+                <td><input type="text" @bind="@user.Email" class="form-control custom-input" /></td>
+                <td><input type="text" @bind="@user.ClassName" class="form-control custom-input" /></td>
+                <td><input type="text" @bind="@user.PhoneNumber" class="form-control custom-input" /></td>
+                <td>
+                    <button style="margin-right:15px" @onclick="(() => ShowConfirmation(2, user))" class="btn btn-primary">Update</button>
+                    <button @onclick="(() => ShowConfirmation(1, user))" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-end mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination">
+                <li class="page-item"><NavLink class="page-link" href="#" Match="NavLinkMatch.All" @onclick="PreviousPage">Previous</NavLink></li>
+                @for (int i = 1; i <= totalpage; i++)
+                {
+                    int pageNumber = i;
+                    if (pageNumber == pageIndex)
+                    {
+                        <li class="page-item active"><NavLink class="page-link" href="#" @onclick="(() => ChangePage(pageNumber))">@pageNumber</NavLink></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><NavLink class="page-link" href="#" @onclick="(() => ChangePage(pageNumber))">@pageNumber</NavLink></li>
+                    }
+                }
+                <li class="page-item"><NavLink class="page-link" href="#" Match="NavLinkMatch.All" @onclick="NextPage">Next</NavLink></li>
+            </ul>
+        </div>
+    </div>
+</div>\
+
+@if (showConfirmation)
+{
+    <div class="modal-background"></div>
+    <div class="modal" style="display:block">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Action</h5>
+                    <button type="button" class="btn-close" @onclick="CancelConfirmation"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure ??
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="CancelConfirmation">Cancel</button>
+                    <button type="button" class="btn btn-primary" @onclick="() => ConfirmActionAsync()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,14 @@
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.csproj.AssemblyReference.cache
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.AssemblyInfoInputs.cache
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.AssemblyInfo.cs
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.csproj.CoreCompileInputs.cache
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.MvcApplicationPartsAssemblyInfo.cache
+D:\ForWork\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.sourcelink.json
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.csproj.AssemblyReference.cache
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.AssemblyInfoInputs.cache
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.AssemblyInfo.cs
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.csproj.CoreCompileInputs.cache
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.MvcApplicationPartsAssemblyInfo.cache
+D:\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net6.0\Webapp.sourcelink.json

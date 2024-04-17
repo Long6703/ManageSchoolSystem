@@ -1,0 +1,73 @@
+﻿@rendermode InteractiveServer
+@using Share.gPRCContracts
+@using AutoMapper
+@inject IUserService UserService
+@inject IMapper _mapper
+
+<style>
+    .modal-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 500px;
+        margin : 0 auto;
+        margin-bottom : 60px;
+    }
+
+    .form-group {
+        padding : 10px;
+    }
+
+    .btn-cancel {
+        background-color: red;
+        color: white;
+    }
+</style>
+
+<button @onclick="PressButton"  class="btn btn-primary">Create new student</button>
+
+@if (pressButton)
+{
+    <div class="container">
+        <div class="modal-background">
+            <div class="modal-content">
+                <h3>Create New Student</h3>
+                <div class="form-group">
+                    <label for="displayName">Display Name:</label>
+                    <input id="displayName" type="text" class="form-control" @bind=newUserEditModel.DisplayName />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" class="form-control" @bind=newUserEditModel.Email />
+                </div>
+                <div class="form-group">
+                    <label for="className">Class Name:</label>
+                    <input id="className" type="text" class="form-control" @bind=newUserEditModel.ClassName />
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input id="phoneNumber" type="tel" class="form-control" @bind=newUserEditModel.PhoneNumber/>
+                </div>
+                <div style="display : flex; align-content:center; gap:20px; margin:0 auto">
+                    <button @onclick="CreateUser" class="btn btn-primary">Create</button>
+                    <button @onclick="Cancel" class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

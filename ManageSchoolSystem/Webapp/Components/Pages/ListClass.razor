@@ -1,0 +1,42 @@
+﻿@rendermode InteractiveServer
+@inherits ComponentBase
+@using Share.Model
+
+
+<div class="container">
+    <div style="display:flex;gap:20px;margin-left:-60px" class="form-group">
+        @foreach (var cls in Classs)
+        {
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="@($"class-{cls.ClassName}")" name="@cls.ClassName" onchange="@(() => CheckboxChanged(cls.ClassId))" checked="@SelectedClasses[cls.ClassId]" />
+                <label class="custom-control-label" for="@($"class-{cls.ClassName}")">@cls.ClassName</label>
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public List<Classs> Classs { get; set; }
+
+    private Dictionary<int, bool> SelectedClasses { get; set; }
+
+    protected override void OnInitialized()
+    {
+        SelectedClasses = new Dictionary<int, bool>();
+        foreach (var c in Classs)
+        {
+            SelectedClasses.Add(c.ClassId, true);
+        }
+    }
+    [Parameter]
+    public EventCallback<Dictionary<int, bool>> OnCheckboxChanged { get; set; }
+
+    private async Task CheckboxChanged(int classId)
+    {
+        SelectedClasses[classId] = !SelectedClasses[classId]; // Toggle the value
+        await OnCheckboxChanged.InvokeAsync(SelectedClasses);
+    }
+}

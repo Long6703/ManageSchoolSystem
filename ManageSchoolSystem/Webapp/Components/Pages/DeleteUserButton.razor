@@ -1,0 +1,13 @@
+﻿@rendermode InteractiveServer
+
+<button class="btn btn-danger" @onclick="OnButtonClick">Delete</button>
+
+@code {
+    [Parameter]
+    public EventCallback OnButtonClicked { get; set; }
+
+    private async Task OnButtonClick()
+    {
+        await OnButtonClicked.InvokeAsync();
+    }
+}

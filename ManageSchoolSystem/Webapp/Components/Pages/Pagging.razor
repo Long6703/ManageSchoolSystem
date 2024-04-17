@@ -1,0 +1,56 @@
+﻿@typeparam TItem
+
+<div class="row">
+    <div class="col-md-12">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(CurrentPageNumber == 1 ? "disabled" : "")">
+                    <button class="page-link" @onclick="() => GoToPage(CurrentPageNumber - 1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </button>
+                </li>
+                @for (int i = 1; i <= TotalPages; i++)
+                {
+                    <li class="page-item @(CurrentPageNumber == i ? "active" : "")">
+                        <button class="page-link" @onclick="() => GoToPage(i)">@i</button>
+                    </li>
+                }
+                <li class="page-item @(CurrentPageNumber == TotalPages ? "disabled" : "")">
+                    <button class="page-link" @onclick="() => GoToPage(CurrentPageNumber + 1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@code {
+    @code {
+        [Parameter]
+        public List<TItem> DataList { get; set; }
+
+        [Parameter]
+        public int PageSize { get; set; } = 5;
+
+        private int TotalPages => (int)Math.Ceiling(DataList.Count / (double)PageSize);
+        private int CurrentPageNumber { get; set; } = 1;
+
+        private async Task GoToPage(int pageNumber)
+        {
+            if (pageNumber < 1 || pageNumber > TotalPages) return;
+            CurrentPageNumber = pageNumber;
+
+            int startIndex = (CurrentPageNumber - 1) * PageSize;
+            int endIndex = Math.Min(startIndex + PageSize, DataList.Count);
+
+            var currentPageData = DataList.Skip(startIndex).Take(endIndex - startIndex).ToList();
+
+            await OnPageChanged.InvokeAsync(currentPageData);
+        }
+
+        [Parameter]
+        public EventCallback<List<TItem>> OnPageChanged { get; set; }
+    }
+}
+
