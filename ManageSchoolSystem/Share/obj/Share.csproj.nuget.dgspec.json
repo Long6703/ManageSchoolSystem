@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {}
+    "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {}
   },
   "projects": {
-    "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
+    "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
+        "projectUniqueName": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
         "projectName": "Share",
-        "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
+        "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\obj\\",
+        "outputPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

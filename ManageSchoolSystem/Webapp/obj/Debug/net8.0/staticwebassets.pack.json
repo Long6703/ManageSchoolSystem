@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css",
+      "Id": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css",
       "PackagePath": "staticwebassets\\Webapp.bundle.scp.css"
     },
     {
-      "Id": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\app.css",
+      "Id": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\favicon.png",
+      "Id": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

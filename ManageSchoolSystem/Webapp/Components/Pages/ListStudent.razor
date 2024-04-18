@@ -48,6 +48,47 @@
         z-index: 1000;
     }
 
+    .pagination {
+        display: flex;
+        justify-content: right;
+        margin-top: 10px;
+    }
+
+    .page-button {
+        display: inline-block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .page-arrow {
+        display: inline-block;
+        padding: 5px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #ccc;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .prev-page {
+        margin-right: 10px;
+    }
+
+    .next-page {
+        margin-left: 5px;
+    }
+
+    .page-button:hover,
+    .page-arrow:hover {
+        background-color: #f5f5f5;
+    }
+
 </style>
 
 <div style="display:flex; justify-content:space-between;margin-bottom:20px">
@@ -86,28 +127,15 @@
     </tbody>
 </table>
 
-<div class="d-flex justify-content-end mt-3">
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="pagination">
-                <li class="page-item"><NavLink class="page-link" href="#" Match="NavLinkMatch.All" @onclick="PreviousPage">Previous</NavLink></li>
-                @for (int i = 1; i <= totalpage; i++)
-                {
-                    int pageNumber = i;
-                    if (pageNumber == pageIndex)
-                    {
-                        <li class="page-item active"><NavLink class="page-link" href="#" @onclick="(() => ChangePage(pageNumber))">@pageNumber</NavLink></li>
-                    }
-                    else
-                    {
-                        <li class="page-item"><NavLink class="page-link" href="#" @onclick="(() => ChangePage(pageNumber))">@pageNumber</NavLink></li>
-                    }
-                }
-                <li class="page-item"><NavLink class="page-link" href="#" Match="NavLinkMatch.All" @onclick="NextPage">Next</NavLink></li>
-            </ul>
-        </div>
-    </div>
-</div>\
+<div class="pagination">
+    <button class="page-arrow prev-page" @onclick="GoToPreviousPage">Previous</button>
+    @for (int i = 1; i <= totalpage; i++)
+    {
+        int currentPage = i;
+        <button class="page-button" @onclick="() => GoToPage(currentPage)">@i</button>
+    }
+    <button class="page-arrow next-page" @onclick="GoToNextPage">Next</button>
+</div>
 
 @if (showConfirmation)
 {

@@ -6109,11 +6109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj",
+      "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\obj\\",
+      "outputPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6135,8 +6135,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
-              "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj"
+            "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
+              "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj"
             }
           }
         }

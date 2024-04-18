@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p7AiKtEA7L9ZGE9M77ANwE7oZnUaN4YKzsHwLSv/M7LDPpBkx6CaXxBqUatnYHIv/6YHuOthUGEu+sbyK4knfQ==",
+  "dgSpecHash": "VOck/gZl0azt77OeOeBiPFnqlT9dRXykhCFMaLyZaU0IfoeSoWPUvhkele+6RUEVfW2j4jIRBf+Im3VN+Sg+dg==",
   "success": true,
-  "projectFilePath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
+  "projectFilePath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\grpc.core.api\\2.51.0\\grpc.core.api.2.51.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",

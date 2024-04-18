@@ -11,23 +11,20 @@ namespace Webapp.Components.Pages
 {
     public partial class ListStudent
     {
-        [Inject]
-        private NavigationManager NavigationManager { get; set; }
         List<UserViewModel> list = new List<UserViewModel>();
         List<Classs> listclass = new List<Classs>();
-        private List<UserViewModel> originalDataList;
+        List<UserViewModel> originalDataList = new List<UserViewModel>();
         private bool showConfirmation = false;
         private int actionToConfirm;
         UserViewModel userview = new UserViewModel();
         public Searching<UserViewModel> searchComponent;
-        static int pageSize = 1000;
-        static int pageIndex;
+        static int pageSize = 10;
+        static int pageIndex = 1;
         static int totalstudent;
         int totalpage = 0;
         List<int> ints = new List<int>();
         protected override async void OnInitialized()
         {
-            pageIndex = 1;
             GetUserResponse2 response = await UserService.GetAllStudentForPageAsync(new GetUserRequest2 { offset = (pageIndex - 1) * pageSize, count = pageSize, searchString = "", classID = ints });
             list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
             totalstudent = response.Total;
@@ -42,7 +39,6 @@ namespace Webapp.Components.Pages
         }
         private async Task LoadData(int pageindex, string searchitem)
         {
-            pageIndex = 1;
             GetUserResponse2 response = await UserService.GetAllStudentForPageAsync(new GetUserRequest2 { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = ints });
             list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
             totalstudent = response.Total;
@@ -51,6 +47,9 @@ namespace Webapp.Components.Pages
             {
                 totalpage = 1;
             }
+            pageIndex = pageindex;
+
+            StateHasChanged();
             originalDataList = new List<UserViewModel>(list);
         }
 
@@ -77,7 +76,7 @@ namespace Webapp.Components.Pages
                     await UserService.EditStudentAsync(new EditUserRequest { id = userview.UserID, UserInfor = _mapper.Map<UserEditModel>(userview) });
                     break;
             }
-            await LoadData(1, searchComponent.searchTerm);
+            await LoadData(pageIndex, searchComponent.searchTerm);
             showConfirmation = false;
             actionToConfirm = 0;
         }
@@ -107,31 +106,28 @@ namespace Webapp.Components.Pages
             StateHasChanged();
         }
 
-        private async Task ChangePage(int page)
-        {
-            if (page != pageIndex)
-            {
-                await LoadData(page, searchComponent.searchTerm);
-                NavigationManager.NavigateTo($"/student-list?page={page}");
-            }
-        }
-
-        private async Task PreviousPage()
+        void GoToPreviousPage()
         {
             if (pageIndex > 1)
             {
-                await LoadData(pageIndex - 1, searchComponent.searchTerm);
-                NavigationManager.NavigateTo($"/student-list?page={pageIndex - 1}");
+                pageIndex--;
             }
+            LoadData(pageIndex, searchComponent.searchTerm);
         }
 
-        private async Task NextPage()
+        void GoToNextPage()
         {
             if (pageIndex < totalpage)
             {
-                await LoadData(pageIndex + 1, searchComponent.searchTerm);
-                NavigationManager.NavigateTo($"/student-list?page={pageIndex + 1}");
+                pageIndex++;
             }
+            LoadData(pageIndex, searchComponent.searchTerm);
+        }
+
+        void GoToPage(int page)
+        {
+            pageIndex = page;
+            LoadData(page, searchComponent.searchTerm);
         }
     }
 }

@@ -143,12 +143,15 @@ namespace Repository.RepoImplement
             using (var session = NHibernateConfig.OpenSession())
             {
                 var query = session.QueryOver<User>()
-                .Where(x => x.Role == "student" && x.IsActive == true);
+                .Where(x => x.Role == "student" && x.IsActive == true)
+                .Where(x => x.DisplayName.IsInsensitiveLike($"%{searchString}%"));
 
                 if (classId != null && classId.Any())
                 {
                     query = query.WhereRestrictionOn(x => x.Class.ClassId).IsIn(classId);
                 }
+
+                int total = query.RowCount();
 
                 var users = query
                     .Where(x => x.DisplayName.IsInsensitiveLike($"%{searchString}%"))
@@ -156,8 +159,6 @@ namespace Repository.RepoImplement
                     .Skip(offset)
                     .Take(count)
                     .List<User>();
-
-                int total = users.Count();
 
                 return (users.ToList(), total);
             }

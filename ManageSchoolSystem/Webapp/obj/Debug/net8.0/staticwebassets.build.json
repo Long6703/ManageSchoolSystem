@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "ykYeiCqQ28hse6g9ddhA7D1yG1iMipdyIsZojjL/dH8=",
+  "Hash": "yDo1EwveXVXMpA0vPJiC0io8C0+iBTn6aK3odTR5/Bg=",
   "Source": "Webapp",
   "BasePath": "_content/Webapp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
       "Version": 2,
       "Source": "GrpcService",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,7 +22,7 @@
     {
       "Name": "Webapp\\wwwroot",
       "Source": "Webapp",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
       "BasePath": "_content/Webapp",
       "Pattern": "**"
     }
@@ -7078,10 +7078,10 @@
       "OriginalItemSpec": "C:\\Users\\acer\\.nuget\\packages\\antdesign\\0.18.3\\staticwebassets\\less\\upload\\style\\rtl.less"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
       "SourceId": "Webapp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\jsmodules\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\jsmodules\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "Webapp.modules.json",
       "AssetKind": "Build",
@@ -7097,10 +7097,10 @@
       "OriginalItemSpec": "obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Webapp.styles.css",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Webapp.styles.css",
       "SourceId": "Webapp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "Webapp.styles.css",
       "AssetKind": "All",
@@ -7113,13 +7113,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Webapp.styles.css"
+      "OriginalItemSpec": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Webapp.styles.css"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css",
       "SourceId": "Webapp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "Webapp.bundle.scp.css",
       "AssetKind": "All",
@@ -7132,13 +7132,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css"
+      "OriginalItemSpec": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Webapp.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\app.css",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\app.css",
       "SourceId": "Webapp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -7154,10 +7154,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "Webapp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -7173,10 +7173,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "Webapp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -7192,10 +7192,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\favicon.png",
+      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\favicon.png",
       "SourceId": "Webapp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
+      "ContentRoot": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\wwwroot\\",
       "BasePath": "_content/Webapp",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

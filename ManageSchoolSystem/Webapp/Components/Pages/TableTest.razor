@@ -1,0 +1,83 @@
+﻿@page "/testbyLong"
+@rendermode InteractiveServer
+@using AntDesign
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="teacher-info">
+                <h2>Giáo viên:</h2>
+                <ul>
+                    <li><a href="#">Teacher 1</a></li>
+                    <li><a href="#">Teacher 2</a></li>
+                    <li><a href="#">Teacher 3</a></li>
+                    <!-- Thêm danh sách giáo viên khác -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="course-info" id="courseInfo">
+                <h2>Các khóa học:</h2>
+                <ul>
+                    <li><a href="#">Course 1</a></li>
+                    <li><a href="#">Course 2</a></li>
+                    <li><a href="#">Course 3</a></li>
+                    <!-- Thêm danh sách khóa học khác -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="class-info" id="classInfo">
+                <h2>Các lớp học:</h2>
+                <ul>
+                    <li><a href="#">Class 1</a></li>
+                    <li><a href="#">Class 2</a></li>
+                    <li><a href="#">Class 3</a></li>
+                    <!-- Thêm danh sách lớp học khác -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="student-info" id="studentInfo">
+                <h2>Danh sách lớp và điểm:</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tên học sinh</th>
+                            <th>Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td>Học sinh 1</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>Học sinh 2</td>
+                            <td>7.0</td>
+                        </tr>
+                        <!-- Thêm dữ liệu học sinh khác -->
+                    </tbody>
+                </table>
+                <button>Lưu điểm</button>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="chart" id="chart">
+                <!-- Chỗ trống để chèn biểu đồ -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    }

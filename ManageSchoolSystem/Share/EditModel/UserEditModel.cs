@@ -21,5 +21,8 @@ namespace Share.EditModel
 
         [DataMember(Order = 4)]
         public string PhoneNumber { get; set; }
+
+        [DataMember(Order = 5)]
+        public bool IsActive { get; set; }
     }
 }

@@ -25,5 +25,8 @@ namespace Share.ViewModel
 
         [DataMember(Order = 5)]
         public string ClassName { get; set; }
+
+        [DataMember(Order = 6)]
+        public bool IsActive { get; set; }
     }
 }

@@ -8399,11 +8399,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
+      "projectUniqueName": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
       "projectName": "GrpcService",
-      "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
+      "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\obj\\",
+      "outputPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8425,14 +8425,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj": {
-              "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj"
+            "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj": {
+              "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj"
             },
-            "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj"
+            "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj"
             },
-            "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
-              "projectPath": "D:\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj"
+            "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
+              "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj"
             }
           }
         }
