@@ -4,7 +4,7 @@ using Repository;
 using System.ComponentModel;
 using Grpc.Net.Client;
 using ProtoBuf.Grpc.Client;
-using Share.gPRCContracts;
+using GrpcService.gPRCContracts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository.IRepo;

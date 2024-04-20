@@ -1,16 +1,8 @@
 ﻿using Grpc.Net.Client;
-using NHibernate.Mapping.ByCode.Impl;
 using ProtoBuf.Grpc.Client;
 using Share.EditModel;
-using Share.gPRCContracts;
-using Share.Model;
 using Share.Validation;
-using Share.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GrpcService.gPRCContracts;
 
 namespace ConsoleApp
 {
@@ -55,7 +47,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("List of student : ");
             var userServiceClient = channel.CreateGrpcService<IUserService>();
-            var reply = userServiceClient.GetAllStudentAsync(new GetUserRequest { Message = 1 });
+            var reply = userServiceClient.GetAllStudentAsync(new GetUserRequestForConsoleApp { Message = 1 });
             Console.WriteLine("UserID\tDisplayName\t\t\tEmail\t\t\tClassName\t\t\t\tPhoneNumber");
             if(sort == 1)
             {
@@ -120,11 +112,6 @@ namespace ConsoleApp
                 Console.WriteLine($"Phone Number: {reply.Result.UserViewInfo.PhoneNumber}");
                 Console.WriteLine($"Class: {reply.Result.UserViewInfo.ClassName}");
             }
-        }
-
-        public static void SortStudentByName()
-        {
-            // Call method to sort students by name
         }
     }
 }

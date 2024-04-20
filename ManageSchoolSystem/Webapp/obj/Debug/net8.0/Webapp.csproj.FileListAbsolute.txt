@@ -180,9 +180,6 @@ D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\appsett
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\appsettings.json
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\GrpcService.deps.json
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\GrpcService.runtimeconfig.json
-D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\ConsoleApp.deps.json
-D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\ConsoleApp.runtimeconfig.json
-D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\ConsoleApp.exe
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\GrpcService.exe
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Webapp.staticwebassets.runtime.json
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Webapp.exe
@@ -232,14 +229,12 @@ D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\runtime
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\runtimes\win\lib\netstandard2.0\System.Private.ServiceModel.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\ConsoleApp.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\GrpcService.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Repository.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Share.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\GrpcService.pdb
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Repository.pdb
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Share.pdb
-D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\ConsoleApp.pdb
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\Webapp.csproj.AssemblyReference.cache
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\Webapp.GeneratedMSBuildEditorConfig.editorconfig
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\Webapp.AssemblyInfoInputs.cache
@@ -265,3 +260,5 @@ D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\refint\
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\Webapp.pdb
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\Webapp.genruntimeconfig.cache
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\obj\Debug\net8.0\ref\Webapp.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\AntDesign.Charts.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\Webapp\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll

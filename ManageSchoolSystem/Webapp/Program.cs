@@ -3,7 +3,7 @@ using Grpc.Net.Client;
 using GrpcService.Services;
 using Repository.IRepo;
 using Repository.RepoImplement;
-using Share.gPRCContracts;
+using GrpcService.gPRCContracts;
 using Webapp.Components;
 
 namespace Webapp

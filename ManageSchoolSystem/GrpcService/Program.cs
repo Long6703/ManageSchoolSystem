@@ -2,7 +2,6 @@ using GrpcService.Services;
 using ProtoBuf.Grpc.Server;
 using Repository.IRepo;
 using Repository.RepoImplement;
-using Share.gPRCContracts;
 
 namespace GrpcService
 {
@@ -25,7 +24,6 @@ namespace GrpcService
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            app.MapGrpcService<TestService>();
             app.MapGrpcService<UserService>();
             app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 

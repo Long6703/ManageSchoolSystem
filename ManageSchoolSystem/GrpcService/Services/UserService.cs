@@ -1,7 +1,7 @@
 ﻿using ProtoBuf.Grpc;
 using Repository.IRepo;
 using Repository.RepoImplement;
-using Share.gPRCContracts;
+using GrpcService.gPRCContracts;
 using Share.ViewModel;
 using AutoMapper;
 using Share.Model;
@@ -69,29 +69,29 @@ namespace GrpcService.Services
 
         }
 
-        public Task<GetUserResponse> GetAllStudentAsync(GetUserRequest request, CallContext context = default)
+        public Task<GetUserResponseForConsoleApp> GetAllStudentAsync(GetUserRequestForConsoleApp request, CallContext context = default)
         {
             var users = _userRepo.GetAllStudent();
-            return Task.FromResult(new GetUserResponse
+            return Task.FromResult(new GetUserResponseForConsoleApp
             {
                 UserInfo = users
             });
         }
 
-        public Task<GetUserResponse2> GetAllStudentForPageAsync(GetUserRequest2 request, CallContext context = default)
+        public Task<GetUserResponseForWebApp> GetAllStudentForPageAsync(GetUserRequestForWebApp request, CallContext context = default)
         {
             var (users, total) = _userRepo.GetAllStudentForPagging(request.offset, request.count, request.searchString, request.classID);
-            return Task.FromResult(new GetUserResponse2
+            return Task.FromResult(new GetUserResponseForWebApp
             {
                 UserInfo = users,
                 Total = total
             });
         }
 
-        public Task<GetClassResponse2> GetClassAsync(GetClassRequest2 request, CallContext context = default)
+        public Task<GetClassResponse> GetClassAsync(GetClassRequest request, CallContext context = default)
         {
             var classes = _userRepo.GetClassses();
-            return Task.FromResult(new GetClassResponse2
+            return Task.FromResult(new GetClassResponse
             {
                 AllClasss = classes
             });
