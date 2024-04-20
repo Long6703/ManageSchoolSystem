@@ -36,7 +36,7 @@
 
     private async Task CheckboxChanged(int classId)
     {
-        SelectedClasses[classId] = !SelectedClasses[classId]; // Toggle the value
+        SelectedClasses[classId] = !SelectedClasses[classId];
         await OnCheckboxChanged.InvokeAsync(SelectedClasses);
     }
 }

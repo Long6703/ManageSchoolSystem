@@ -4,101 +4,6 @@
     "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Webapp\\Webapp.csproj": {}
   },
   "projects": {
-    "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj",
-        "projectName": "ConsoleApp",
-        "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj": {
-                "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj"
-              },
-              "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj": {
-                "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Share\\Share.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Google.Protobuf": {
-              "target": "Package",
-              "version": "[3.26.1, )"
-            },
-            "Grpc.Net.Client": {
-              "target": "Package",
-              "version": "[2.62.0, )"
-            },
-            "Grpc.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.62.0, )"
-            },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "protobuf-net.Grpc": {
-              "target": "Package",
-              "version": "[1.1.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -128,9 +33,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj": {
-                "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\ConsoleApp\\ConsoleApp.csproj"
-              },
               "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj": {
                 "projectPath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\Repository\\Repository.csproj"
               },
@@ -384,6 +286,10 @@
             "AntDesign": {
               "target": "Package",
               "version": "[0.18.3, )"
+            },
+            "AntDesign.Charts": {
+              "target": "Package",
+              "version": "[0.5.1, )"
             },
             "Google.Protobuf": {
               "target": "Package",

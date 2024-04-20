@@ -1,6 +1,6 @@
 ﻿﻿
 @page "/studentList"
-@using Share.gPRCContracts
+@using GrpcService.gPRCContracts
 @using AutoMapper
 @using Share.ViewModel
 @inject IUserService UserService
@@ -93,7 +93,7 @@
 
 <div style="display:flex; justify-content:space-between;margin-bottom:20px">
     <h3>List Student</h3>
-    <CreatStudent OnStudentCreated="OnStudentCreated"></CreatStudent>
+    <CreatStudent OnStudentCreated="AfterStudentCreated"></CreatStudent>
 </div>
 
 <ListClass Classs="@listclass" OnCheckboxChanged="HandleCheckboxChanged"></ListClass>
@@ -128,13 +128,13 @@
 </table>
 
 <div class="pagination">
-    <button class="page-arrow prev-page" @onclick="GoToPreviousPage">Previous</button>
+    <button class="page-arrow prev-page" @onclick="GoToPreviousPageAsync">Previous</button>
     @for (int i = 1; i <= totalpage; i++)
     {
         int currentPage = i;
-        <button class="page-button" @onclick="() => GoToPage(currentPage)">@i</button>
+        <button class="page-button" @onclick="() => GoToPageAsync(currentPage)">@i</button>
     }
-    <button class="page-arrow next-page" @onclick="GoToNextPage">Next</button>
+    <button class="page-arrow next-page" @onclick="GoToNextPageAsync">Next</button>
 </div>
 
 @if (showConfirmation)

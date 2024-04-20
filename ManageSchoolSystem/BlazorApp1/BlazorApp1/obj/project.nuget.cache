@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hg1IkmiYc/8x7/zuBd0+yhZJACMSvxysU2JdqXXLxi3GMJ/8EQAlt3AnbpIdp7dnNRtlf2tYIqKkbzfOScqlww==",
+  "success": true,
+  "projectFilePath": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\acer\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\8.0.1\\microsoft.aspnetcore.components.webassembly.server.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

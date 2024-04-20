@@ -1,12 +1,8 @@
 ﻿
-using AutoMapper;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.WebUtilities;
 using Share.EditModel;
-using Share.gPRCContracts;
+using GrpcService.gPRCContracts;
 using Share.Model;
 using Share.ViewModel;
-using System.Drawing.Printing;
 namespace Webapp.Components.Pages
 {
     public partial class ListStudent
@@ -18,28 +14,14 @@ namespace Webapp.Components.Pages
         private int actionToConfirm;
         UserViewModel userview = new UserViewModel();
         public Searching<UserViewModel> searchComponent;
-        static int pageSize = 10;
+        static int pageSize = 6;
         static int pageIndex = 1;
         static int totalstudent;
         int totalpage = 0;
-        List<int> ints = new List<int>();
+        List<int> listClassidSelected = new List<int>();
         protected override async void OnInitialized()
         {
-            GetUserResponse2 response = await UserService.GetAllStudentForPageAsync(new GetUserRequest2 { offset = (pageIndex - 1) * pageSize, count = pageSize, searchString = "", classID = ints });
-            list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
-            totalstudent = response.Total;
-            totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
-            if(totalpage == 0)
-            {
-                totalpage = 1;
-            }
-            originalDataList = new List<UserViewModel>(list);
-            GetClassResponse2 getClassResponse = await UserService.GetClassAsync(new GetClassRequest2 { Message = 1 });
-            listclass = getClassResponse.AllClasss;
-        }
-        private async Task LoadData(int pageindex, string searchitem)
-        {
-            GetUserResponse2 response = await UserService.GetAllStudentForPageAsync(new GetUserRequest2 { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = ints });
+            GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageIndex - 1) * pageSize, count = pageSize, searchString = "", classID = listClassidSelected });
             list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
             totalstudent = response.Total;
             totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
@@ -47,10 +29,31 @@ namespace Webapp.Components.Pages
             {
                 totalpage = 1;
             }
-            pageIndex = pageindex;
-
-            StateHasChanged();
             originalDataList = new List<UserViewModel>(list);
+            //await LoadData(pageIndex, "");
+            GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
+            listclass = getClassResponse.AllClasss;
+        }
+        private async Task LoadData(int pageindex, string searchitem)
+        {
+            try
+            {
+                GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
+                list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
+                totalstudent = response.Total;
+                totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
+                if (totalpage == 0)
+                {
+                    totalpage = 1;
+                }
+                pageIndex = pageindex;
+                originalDataList = new List<UserViewModel>(list);
+                StateHasChanged();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private void ShowConfirmation(int action, UserViewModel user)
@@ -81,7 +84,7 @@ namespace Webapp.Components.Pages
             actionToConfirm = 0;
         }
 
-        public async Task OnStudentCreated()
+        public async Task AfterStudentCreated()
         {
             await LoadData(1, searchComponent.searchTerm);
         }
@@ -94,40 +97,40 @@ namespace Webapp.Components.Pages
 
         private async Task HandleCheckboxChanged(Dictionary<int, bool> selectedClasses)
         {
-            ints.Clear();
+            listClassidSelected.Clear();
             foreach (var item in selectedClasses)
             {
                 if(item.Value == true)
                 {
-                    ints.Add(item.Key);
+                    listClassidSelected.Add(item.Key);
                 }
             }
             await LoadData(1, searchComponent.searchTerm);
             StateHasChanged();
         }
 
-        void GoToPreviousPage()
+        async Task GoToPreviousPageAsync()
         {
             if (pageIndex > 1)
             {
                 pageIndex--;
             }
-            LoadData(pageIndex, searchComponent.searchTerm);
+            await LoadData(pageIndex, searchComponent.searchTerm);
         }
 
-        void GoToNextPage()
+        async Task GoToNextPageAsync()
         {
             if (pageIndex < totalpage)
             {
                 pageIndex++;
             }
-            LoadData(pageIndex, searchComponent.searchTerm);
+            await LoadData(pageIndex, searchComponent.searchTerm);
         }
 
-        void GoToPage(int page)
+        async Task GoToPageAsync(int page)
         {
             pageIndex = page;
-            LoadData(page, searchComponent.searchTerm);
+            await LoadData(page, searchComponent.searchTerm);
         }
     }
 }

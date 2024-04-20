@@ -30,10 +30,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdFN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/DeleteUserButton.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVVc2VyQnV0dG9uLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,20 +46,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0U3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/Pagging.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYWdnaW5nLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/Searching.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hpbmcucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/TableTest.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYWJsZVRlc3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/Test.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/Webapp/Components/Pages/Weather.razor]
