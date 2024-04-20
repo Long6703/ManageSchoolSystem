@@ -21,18 +21,9 @@ namespace Webapp.Components.Pages
         List<int> listClassidSelected = new List<int>();
         protected override async void OnInitialized()
         {
-            GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageIndex - 1) * pageSize, count = pageSize, searchString = "", classID = listClassidSelected });
-            list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
-            totalstudent = response.Total;
-            totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
-            if (totalpage == 0)
-            {
-                totalpage = 1;
-            }
-            originalDataList = new List<UserViewModel>(list);
-            //await LoadData(pageIndex, "");
             GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
             listclass = getClassResponse.AllClasss;
+            await LoadData(pageIndex, "");
         }
         private async Task LoadData(int pageindex, string searchitem)
         {
@@ -97,7 +88,6 @@ namespace Webapp.Components.Pages
 
         private async Task HandleCheckboxChanged(Dictionary<int, bool> selectedClasses)
         {
-            listClassidSelected.Clear();
             foreach (var item in selectedClasses)
             {
                 if(item.Value == true)
@@ -106,6 +96,7 @@ namespace Webapp.Components.Pages
                 }
             }
             await LoadData(1, searchComponent.searchTerm);
+            listClassidSelected.Clear();
             StateHasChanged();
         }
 
