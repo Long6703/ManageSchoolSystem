@@ -8,7 +8,6 @@ namespace Webapp.Components.Pages
     public partial class ListStudent
     {
         List<UserViewModel> list = new List<UserViewModel>();
-        List<Classs> listclass = new List<Classs>();
         List<UserViewModel> originalDataList = new List<UserViewModel>();
         private bool showConfirmation = false;
         private int actionToConfirm;
@@ -19,10 +18,8 @@ namespace Webapp.Components.Pages
         static int totalstudent;
         int totalpage = 0;
         List<int> listClassidSelected = new List<int>();
-        protected override async void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
-            listclass = getClassResponse.AllClasss;
             await LoadData(pageIndex, "");
         }
         private async Task LoadData(int pageindex, string searchitem)
@@ -41,9 +38,9 @@ namespace Webapp.Components.Pages
                 originalDataList = new List<UserViewModel>(list);
                 StateHasChanged();
             }
-            catch (Exception e)
+            catch(Exception ex)
             {
-                Console.WriteLine(e.Message);
+                await Console.Out.WriteLineAsync(ex.Message);
             }
         }
 
