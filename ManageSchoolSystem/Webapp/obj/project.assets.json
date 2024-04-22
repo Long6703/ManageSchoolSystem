@@ -8063,7 +8063,8 @@
       "Grpc.Tools >= 2.62.0",
       "GrpcService >= 1.0.0",
       "Repository >= 1.0.0",
-      "Share >= 1.0.0"
+      "Share >= 1.0.0",
+      "protobuf-net.Grpc >= 1.1.1"
     ]
   },
   "packageFolders": {
@@ -8142,6 +8143,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.62.0, )"
+          },
+          "protobuf-net.Grpc": {
+            "target": "Package",
+            "version": "[1.1.1, )"
           }
         },
         "imports": [

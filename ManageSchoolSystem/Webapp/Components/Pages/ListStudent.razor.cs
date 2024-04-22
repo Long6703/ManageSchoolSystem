@@ -8,7 +8,6 @@ namespace Webapp.Components.Pages
     public partial class ListStudent
     {
         List<UserViewModel> list = new List<UserViewModel>();
-        List<Classs> listclass = new List<Classs>();
         List<UserViewModel> originalDataList = new List<UserViewModel>();
         private bool showConfirmation = false;
         private int actionToConfirm;
@@ -19,32 +18,23 @@ namespace Webapp.Components.Pages
         static int totalstudent;
         int totalpage = 0;
         List<int> listClassidSelected = new List<int>();
-        protected override async void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
-            listclass = getClassResponse.AllClasss;
             await LoadData(pageIndex, "");
         }
         private async Task LoadData(int pageindex, string searchitem)
         {
-            try
+            GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
+            list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
+            totalstudent = response.Total;
+            totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
+            if (totalpage == 0)
             {
-                GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
-                list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
-                totalstudent = response.Total;
-                totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
-                if (totalpage == 0)
-                {
-                    totalpage = 1;
-                }
-                pageIndex = pageindex;
-                originalDataList = new List<UserViewModel>(list);
-                StateHasChanged();
+                totalpage = 1;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            pageIndex = pageindex;
+            originalDataList = new List<UserViewModel>(list);
+            StateHasChanged();
         }
 
         private void ShowConfirmation(int action, UserViewModel user)
