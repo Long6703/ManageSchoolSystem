@@ -61,18 +61,28 @@ namespace Webapp.Components.Pages
 
         private async Task ConfirmActionAsync()
         {
-            switch (actionToConfirm)
+            try
             {
-                case 1:
-                    await UserService.DeleteStudentAsync(new DeleteStudentRequest { UserID = userview.UserID });
-                    break;
-                case 2:
-                    await UserService.EditStudentAsync(new EditUserRequest { id = userview.UserID, UserInfor = _mapper.Map<UserEditModel>(userview) });
-                    break;
+                switch (actionToConfirm)
+                {
+                    case 1:
+                        await UserService.DeleteStudentAsync(new DeleteStudentRequest { UserID = userview.UserID });
+                        break;
+                    case 2:
+                        await UserService.EditStudentAsync(new EditUserRequest { id = userview.UserID, UserInfor = _mapper.Map<UserEditModel>(userview) });
+                        break;
+                }
+                await LoadData(pageIndex, searchComponent.searchTerm);
             }
-            await LoadData(pageIndex, searchComponent.searchTerm);
-            showConfirmation = false;
-            actionToConfirm = 0;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+            finally
+            {
+                showConfirmation = false;
+                actionToConfirm = 0;
+            }
         }
 
         public async Task AfterStudentCreated()
