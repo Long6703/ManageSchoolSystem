@@ -24,17 +24,24 @@ namespace Webapp.Components.Pages
         }
         private async Task LoadData(int pageindex, string searchitem)
         {
-            GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
-            list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
-            totalstudent = response.Total;
-            totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
-            if (totalpage == 0)
+            try
             {
-                totalpage = 1;
+                GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
+                list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
+                totalstudent = response.Total;
+                totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
+                if (totalpage == 0)
+                {
+                    totalpage = 1;
+                }
+                pageIndex = pageindex;
+                originalDataList = new List<UserViewModel>(list);
+                StateHasChanged();
             }
-            pageIndex = pageindex;
-            originalDataList = new List<UserViewModel>(list);
-            StateHasChanged();
+            catch(Exception ex)
+            {
+                await Console.Out.WriteLineAsync(ex.Message);
+            }
         }
 
         private void ShowConfirmation(int action, UserViewModel user)
