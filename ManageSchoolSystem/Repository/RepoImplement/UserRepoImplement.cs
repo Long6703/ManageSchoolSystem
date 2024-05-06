@@ -27,7 +27,7 @@ namespace Repository.RepoImplement
                     try
                     {
                         var classs = session.QueryOver<Classs>().Where(x => x.ClassName == useredit.ClassName).SingleOrDefault();
-                        if(classs == null)
+                        if (classs == null)
                         {
                             transaction.Rollback();
                             return false;
@@ -73,7 +73,7 @@ namespace Repository.RepoImplement
                         transaction.Commit();
                         return true;
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         transaction.Rollback();
                         Console.WriteLine(e.Message);
@@ -85,14 +85,14 @@ namespace Repository.RepoImplement
 
         public bool EditStudent(int id, UserEditModel userupdate)
         {
-            using(var session = NHibernateConfig.OpenSession())
+            using (var session = NHibernateConfig.OpenSession())
             {
-                using(var transaction = session.BeginTransaction())
+                using (var transaction = session.BeginTransaction())
                 {
                     try
                     {
                         User user = session.QueryOver<User>().Where(x => x.UserID == id).SingleOrDefault();
-                        if(user == null)
+                        if (user == null)
                         {
                             transaction.Rollback();
                             return false;
@@ -101,7 +101,7 @@ namespace Repository.RepoImplement
                         user.Email = userupdate.Email;
                         user.PhoneNumber = userupdate.PhoneNumber;
                         var classs = session.QueryOver<Classs>().Where(x => x.ClassName == userupdate.ClassName).SingleOrDefault();
-                        if(classs == null)
+                        if (classs == null)
                         {
                             transaction.Rollback();
                             return false;
@@ -123,7 +123,7 @@ namespace Repository.RepoImplement
 
         public List<User> GetAllStudent()
         {
-            using(var session = NHibernateConfig.OpenSession())
+            using (var session = NHibernateConfig.OpenSession())
             {
                 var query = session.QueryOver<User>()
                             .Where(x => x.Role == "student" && x.IsActive == true)
@@ -164,9 +164,9 @@ namespace Repository.RepoImplement
             }
         }
 
-    public List<Classs> GetClassses()
+        public List<Classs> GetClassses()
         {
-            using(var session = NHibernateConfig.OpenSession())
+            using (var session = NHibernateConfig.OpenSession())
             {
                 var query = session.QueryOver<Classs>().List();
                 List<Classs> classses = new List<Classs>();

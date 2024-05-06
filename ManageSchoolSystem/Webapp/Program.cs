@@ -17,7 +17,7 @@ namespace Webapp
 
             // Add services to the container.
             builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents();
+                .AddInteractiveServerComponents(); 
 
             var channel = GrpcChannel.ForAddress("http://localhost:5211");
             builder.Services.AddSingleton(channel);
