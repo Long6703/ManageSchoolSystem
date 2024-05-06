@@ -26,7 +26,13 @@ namespace Webapp.Components.Pages
         {
             try
             {
-                GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp { offset = (pageindex - 1) * pageSize, count = pageSize, searchString = searchitem, classID = listClassidSelected });
+                GetUserResponseForWebApp response = await UserService.GetAllStudentForPageAsync(new GetUserRequestForWebApp
+                {
+                    offset = (pageindex - 1) * pageSize,
+                    count = pageSize,
+                    searchString = searchitem,
+                    classID = listClassidSelected
+                });
                 list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
                 totalstudent = response.Total;
                 totalpage = (int)Math.Ceiling((double)totalstudent / pageSize);
@@ -38,7 +44,7 @@ namespace Webapp.Components.Pages
                 originalDataList = new List<UserViewModel>(list);
                 StateHasChanged();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 await Console.Out.WriteLineAsync(ex.Message);
             }
@@ -97,7 +103,7 @@ namespace Webapp.Components.Pages
         {
             foreach (var item in selectedClasses)
             {
-                if(item.Value == true)
+                if (item.Value == true)
                 {
                     listClassidSelected.Add(item.Key);
                 }
