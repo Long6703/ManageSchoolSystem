@@ -1,9 +1,6 @@
 using AntDesign;
 using Grpc.Net.Client;
-using GrpcService.Services;
-using Repository.IRepo;
-using Repository.RepoImplement;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 using Webapp.Components;
 using ProtoBuf.Grpc.Client;
 

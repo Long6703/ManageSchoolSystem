@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "dfiEdcy/PsC3Pdxzp13LfOjLT2dx1NHXbgEa+rDzWPs=",
+  "Hash": "qHJIopqTkPKdhI0a5DQJfQ53M5JLqkKxU6qh2SAqGI0=",
   "Source": "Webapp",
   "BasePath": "_content/Webapp",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "D:\\ForWork\\ManageSchoolSystem\\ManageSchoolSystem\\GrpcService\\GrpcService.csproj",
-      "Version": 2,
-      "Source": "GrpcService",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
       "Name": "Webapp\\wwwroot",

@@ -1,6 +1,6 @@
 ﻿
 using Share.EditModel;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 using Share.Model;
 using Share.ViewModel;
 namespace Webapp.Components.Pages

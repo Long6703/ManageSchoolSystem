@@ -128,13 +128,8 @@ namespace Repository.RepoImplement
                 var query = session.QueryOver<User>()
                             .Where(x => x.Role == "student" && x.IsActive == true)
                             .JoinQueryOver(x => x.Class)
-                            .List();
-                List<User> students = new List<User>();
-                foreach (var student in query)
-                {
-                    students.Add(student);
-                }
-                return students;
+                            .List().ToList();
+                return query;
             }
         }
 
@@ -154,7 +149,6 @@ namespace Repository.RepoImplement
                 int total = query.RowCount();
 
                 var users = query
-                    .Where(x => x.DisplayName.IsInsensitiveLike($"%{searchString}%"))
                     .JoinQueryOver(x => x.Class)
                     .Skip(offset)
                     .Take(count)
@@ -168,13 +162,8 @@ namespace Repository.RepoImplement
         {
             using (var session = NHibernateConfig.OpenSession())
             {
-                var query = session.QueryOver<Classs>().List();
-                List<Classs> classses = new List<Classs>();
-                foreach (var classs in query)
-                {
-                    classses.Add(classs);
-                }
-                return classses;
+                var query = session.QueryOver<Classs>().List().ToList();
+                return query;
             }
         }
 

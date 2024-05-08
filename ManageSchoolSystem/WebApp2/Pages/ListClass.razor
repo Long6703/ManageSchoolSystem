@@ -1,0 +1,44 @@
+﻿
+@inherits ComponentBase
+@using Share.Model
+@using gPRCContracts
+@inject IUserService UserService
+
+<div class="container">
+    <div style="display:flex;gap:20px;margin-left:-60px" class="form-group">
+        @foreach (var cls in Classs)
+        {
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="@cls.ClassName" onchange="@(() => CheckboxChanged(cls.ClassId))" checked="@SelectedClasses[cls.ClassId]" />
+                <label class="custom-control-label">@cls.ClassName</label>
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+    public List<Classs> Classs = new List<Classs>();
+
+    private Dictionary<int, bool> SelectedClasses { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
+        Classs = getClassResponse.AllClasss;
+        SelectedClasses = new Dictionary<int, bool>();
+        foreach (var c in Classs)
+        {
+            SelectedClasses.Add(c.ClassId, true);
+        }
+    }
+    [Parameter]
+    public EventCallback<Dictionary<int, bool>> OnCheckboxChanged { get; set; }
+
+    private async Task CheckboxChanged(int classId)
+    {
+        SelectedClasses[classId] = !SelectedClasses[classId];
+        await OnCheckboxChanged.InvokeAsync(SelectedClasses);
+    }
+}
