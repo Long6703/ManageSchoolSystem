@@ -2,7 +2,7 @@
 using ProtoBuf.Grpc.Client;
 using Share.EditModel;
 using Share.Validation;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 
 namespace ConsoleApp
 {

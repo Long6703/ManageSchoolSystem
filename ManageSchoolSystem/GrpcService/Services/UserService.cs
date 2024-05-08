@@ -1,7 +1,7 @@
 ﻿using ProtoBuf.Grpc;
 using Repository.IRepo;
 using Repository.RepoImplement;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 using Share.ViewModel;
 using AutoMapper;
 using Share.Model;

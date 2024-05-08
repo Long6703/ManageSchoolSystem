@@ -1,0 +1,48 @@
+﻿﻿
+@page "/studentList"
+@using gPRCContracts
+@using AutoMapper
+@using Share.ViewModel
+@inject IUserService UserService
+@inject IMapper _mapper
+@inject ModalService _modalService
+@inject IMessageService _message
+
+
+<div style="display:flex; justify-content:space-between;margin-bottom:20px">
+    <h3>List Student</h3>
+    <Button Type="primary" @onclick="_=>openCreate()">Create new student</Button>
+    @* <CreatStudent OnStudentCreated="AfterStudentCreated"></CreatStudent> *@
+</div>
+
+<ListClass OnCheckboxChanged="HandleCheckboxChanged"></ListClass>
+<Searching @ref="searchComponent" TItem="UserViewModel" OnSearchTermChanged="HandleSearchResults"></Searching>
+<Table TItem="UserViewModel" DataSource="list" PageSize="pageSize" PageIndex="pageIndex" Total="totalstudent" OnPageIndexChange="GoToPageAsync">
+    <Column @bind-Field="@context.DisplayName"></Column>
+    <Column @bind-Field="@context.Email" ></Column>
+    <Column @bind-Field="@context.ClassName" ></Column>
+    <Column @bind-Field="@context.PhoneNumber" ></Column>
+    <ActionColumn>
+        <div style="display:flex; gap:20px">
+            <Button Type="primary" @onclick="_=>open(context)">Update</Button>
+            <Popconfirm Title="Are you sure to delete this student?"
+                        OnConfirm="() => DeleteStudent(context)"
+                        OkText="Yes"
+                        CancelText="No">
+                <Button><Icon Type="delete" Theme="outline" /></Button>
+            </Popconfirm>
+        </div>
+    </ActionColumn>
+</Table>
+
+
+<Drawer Closable="true" @bind-Visible="visible" Title='("Basic Drawer")' Width="400">
+    <UpdateStudent userViewModel="userview" OnStudentUpdated="AfterStudentCreated"></UpdateStudent>
+</Drawer>
+
+<Drawer Closable="true" @bind-Visible="visibleCreate" Title='("Basic Drawer")' Width="400">
+    <CreatStudent OnStudentCreated="AfterStudentCreated"></CreatStudent>
+</Drawer>
+
+
+

@@ -1,14 +1,11 @@
 ﻿using Share.Model;
 using Share.ViewModel;
-using Repository;
 using System.ComponentModel;
 using Grpc.Net.Client;
 using ProtoBuf.Grpc.Client;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Repository.IRepo;
-using Repository.RepoImplement;
 using Share.Validation;
 namespace ConsoleApp
 {

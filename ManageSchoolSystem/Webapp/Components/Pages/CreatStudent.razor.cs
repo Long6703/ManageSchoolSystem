@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Share.EditModel;
-using GrpcService.gPRCContracts;
+using gPRCContracts;
 using Share.Model;
 
 namespace Webapp.Components.Pages
