@@ -162,8 +162,7 @@ namespace Repository.RepoImplement
         {
             using (var session = NHibernateConfig.OpenSession())
             {
-                var query = session.QueryOver<Classs>().List().ToList();
-                return query;
+                return session.QueryOver<Classs>().List().ToList();
             }
         }
 
