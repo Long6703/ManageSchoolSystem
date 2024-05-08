@@ -14,6 +14,9 @@ namespace WebApp2.Pages
         [Parameter]
         public EventCallback OnStudentUpdated { get; set; }
 
+        [Parameter]
+        public EventCallback<string> SendMessage { get; set; }
+
         public List<Classs> Classs = new List<Classs>();
 
         UserEditModel newUserEditModel = new UserEditModel();
@@ -26,8 +29,9 @@ namespace WebApp2.Pages
 
         public async Task updateUser()
         {
-            await UserService.EditStudentAsync(new EditUserRequest { id = userViewModel.UserID, UserInfor = _mapper.Map<UserEditModel>(userViewModel) });
+            EditUserResponse response = await UserService.EditStudentAsync(new EditUserRequest { id = userViewModel.UserID, UserInfor = _mapper.Map<UserEditModel>(userViewModel) });
             await OnStudentUpdated.InvokeAsync();
+            await SendMessage.InvokeAsync(response.Message);
         }
 
     }

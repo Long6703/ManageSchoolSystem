@@ -37,12 +37,17 @@
 
 
 <Drawer Closable="true" @bind-Visible="visible" Title='("Basic Drawer")' Width="400">
-    <UpdateStudent userViewModel="userview" OnStudentUpdated="AfterStudentCreated"></UpdateStudent>
+    <UpdateStudent userViewModel="userview" OnStudentUpdated="AfterStudentCreated" SendMessage="ReceiveMessage"></UpdateStudent>
 </Drawer>
 
 <Drawer Closable="true" @bind-Visible="visibleCreate" Title='("Basic Drawer")' Width="400">
-    <CreatStudent OnStudentCreated="AfterStudentCreated"></CreatStudent>
+    <CreatStudent OnStudentCreated="AfterStudentCreated" SendMessage="ReceiveMessage"></CreatStudent>
 </Drawer>
+
+@* @if (!string.IsNullOrEmpty(receivedMessage))
+{
+    _message.Success(receivedMessage);
+} *@
 
 
 

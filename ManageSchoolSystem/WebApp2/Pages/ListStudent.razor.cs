@@ -16,6 +16,7 @@ namespace WebApp2.Pages
         static int pageSize = 6;
         static int pageIndex = 1;
         static int totalstudent;
+        string receivedMessage = "";
         List<int> listClassidSelected = new List<int>();
         bool visible = false;
         bool visibleCreate = false;
@@ -64,7 +65,9 @@ namespace WebApp2.Pages
 
         public async Task AfterStudentCreated()
         {
-            await LoadData(1, searchComponent.searchTerm, listClassidSelected);
+            await LoadData(pageIndex, searchComponent.searchTerm, listClassidSelected);
+            this.visibleCreate = false;
+            this.visible = false;
         }
 
         protected async Task HandleSearchResults()
@@ -90,6 +93,13 @@ namespace WebApp2.Pages
         async Task GoToPageAsync(PaginationEventArgs e)
         {
             pageIndex = e.Page;
+            await LoadData(pageIndex, searchComponent.searchTerm, listClassidSelected);
+        }
+
+        private async Task ReceiveMessage(string message)
+        {
+            receivedMessage = message;
+            _message.Success(receivedMessage);
             await LoadData(pageIndex, searchComponent.searchTerm, listClassidSelected);
         }
     }

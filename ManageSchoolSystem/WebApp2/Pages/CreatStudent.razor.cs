@@ -14,6 +14,9 @@ namespace WebApp2.Pages
 
         UserEditModel newUserEditModel = new UserEditModel();
 
+        [Parameter]
+        public EventCallback<string> SendMessage { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             GetClassResponse getClassResponse = await UserService.GetClassAsync(new GetClassRequest { Message = 1 });
@@ -24,6 +27,7 @@ namespace WebApp2.Pages
         {
             CreateUserResponse reply = await UserService.CreateStudentAsync(new CreateUserRequest { useredit = newUserEditModel });
             await OnStudentCreated.InvokeAsync();
+            await SendMessage.InvokeAsync(reply.Message);
         }
     }
 }
