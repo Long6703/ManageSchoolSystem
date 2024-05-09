@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/WebApp2/Pages/Chart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/WebApp2/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,10 +52,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/WebApp2/Pages/Searching.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoaW5nLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/WebApp2/Pages/TestAntDesign.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdEFudERlc2lnbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ForWork/ManageSchoolSystem/ManageSchoolSystem/WebApp2/Pages/UpdateStudent.razor]

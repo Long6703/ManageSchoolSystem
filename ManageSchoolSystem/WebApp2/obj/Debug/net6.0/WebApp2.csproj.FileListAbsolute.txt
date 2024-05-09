@@ -49,3 +49,8 @@ D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\Grpc.N
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\OneOf.dll
 D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\obj\Debug\net6.0\jsmodules\jsmodules.build.manifest.json
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\AntDesign.Charts.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\System.Text.Json.dll
+D:\ForWork\ManageSchoolSystem\ManageSchoolSystem\WebApp2\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

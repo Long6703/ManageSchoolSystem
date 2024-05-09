@@ -119,6 +119,10 @@
               "target": "Package",
               "version": "[0.18.3, )"
             },
+            "AntDesign.Charts": {
+              "target": "Package",
+              "version": "[0.5.1, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"

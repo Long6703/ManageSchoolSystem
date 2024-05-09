@@ -1,6 +1,7 @@
 ﻿using AntDesign;
 using gPRCContracts;
 using Microsoft.AspNetCore.Components;
+using OneOf.Types;
 using Share.EditModel;
 using Share.ViewModel;
 
@@ -45,6 +46,11 @@ namespace WebApp2.Pages
                     classID = listselectedclass
                 });
                 list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
+                int startIndex = (pageindex - 1) * pageSize + 1;
+                foreach (var user in list)
+                {
+                    user.Index = startIndex++;
+                }
                 totalstudent = response.Total;
                 pageIndex = pageindex;
                 StateHasChanged();

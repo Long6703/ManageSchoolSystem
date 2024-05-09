@@ -124,6 +124,20 @@ namespace gPRCContracts
         public List<Classs> AllClasss { get; set; }
     }
 
+    [DataContract]
+    public class GetStudentCountsByClassRequest
+    {
+        [DataMember(Order = 1)]
+        public int Message { get; set; }
+    }
+
+    [DataContract]
+    public class GetStudentCountsByClassReponse
+    {
+        [DataMember(Order = 1)]
+        public List<StudentCount> studentCountlist { get; set; }
+    }
+
     [ServiceContract]
     public interface IUserService
     {
@@ -147,5 +161,8 @@ namespace gPRCContracts
 
         [OperationContract]
         Task<GetClassResponse> GetClassAsync(GetClassRequest request, CallContext context = default);
+
+        [OperationContract]
+        Task<GetStudentCountsByClassReponse> GetStudentCountsByClass(GetStudentCountsByClassRequest request, CallContext context = default);
     }
 }

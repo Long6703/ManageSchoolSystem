@@ -1,18 +1,8 @@
 ﻿using NHibernate;
 using NHibernate.Criterion;
-using NHibernate.SqlCommand;
 using Repository.IRepo;
 using Share.EditModel;
 using Share.Model;
-using Share.Validation;
-using Share.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Schema;
 
 namespace Repository.RepoImplement
 {
@@ -177,6 +167,30 @@ namespace Repository.RepoImplement
                 }
                 NHibernateUtil.Initialize(student.Class);
                 return student;
+            }
+        }
+
+        public List<StudentCount> GetStudentCountsByClass()
+        {
+            List<StudentCount > studentCounts = new List<StudentCount>();
+            using (var session = NHibernateConfig.OpenSession())
+            {
+                var results = session.Query<User>()
+                                .GroupBy(s => s.Class.ClassName)
+                                .Where(g => g.Key != null)
+                                .Select(g => new { ClassName = g.Key, Count = g.Count() })
+                                .ToList();
+                foreach (var result in results)
+                {
+                    StudentCount studentCount = new StudentCount()
+                    {
+                        ClassName = result.ClassName,
+                        Count = result.Count
+                    };
+                    studentCounts.Add(studentCount);
+                }
+                return studentCounts;
+                
             }
         }
     }
