@@ -15,6 +15,7 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)grpc.tools\2.62.0\build\Grpc.Tools.props" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.62.0\build\Grpc.Tools.props')" />
+    <Import Project="$(NuGetPackageRoot)antdesign.charts\0.5.1\buildTransitive\AntDesign.Charts.props" Condition="Exists('$(NuGetPackageRoot)antdesign.charts\0.5.1\buildTransitive\AntDesign.Charts.props')" />
     <Import Project="$(NuGetPackageRoot)antdesign\0.18.3\buildTransitive\AntDesign.props" Condition="Exists('$(NuGetPackageRoot)antdesign\0.18.3\buildTransitive\AntDesign.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">

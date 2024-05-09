@@ -1,6 +1,7 @@
 ﻿using AntDesign;
 using gPRCContracts;
 using Microsoft.AspNetCore.Components;
+using OneOf.Types;
 using Share.EditModel;
 using Share.ViewModel;
 
@@ -10,7 +11,6 @@ namespace WebApp2.Pages
     public partial class ListStudent
     {
         List<UserViewModel> list = new List<UserViewModel>();
-        List<UserViewModel> originalDataList = new List<UserViewModel>();
         UserViewModel userview = new UserViewModel();
         public Searching<UserViewModel> searchComponent;
         static int pageSize = 6;
@@ -46,9 +46,13 @@ namespace WebApp2.Pages
                     classID = listselectedclass
                 });
                 list = _mapper.Map<List<UserViewModel>>(response.UserInfo);
+                int startIndex = (pageindex - 1) * pageSize + 1;
+                foreach (var user in list)
+                {
+                    user.Index = startIndex++;
+                }
                 totalstudent = response.Total;
                 pageIndex = pageindex;
-                originalDataList = new List<UserViewModel>(list);
                 StateHasChanged();
             }
             catch (Exception ex)
@@ -99,7 +103,13 @@ namespace WebApp2.Pages
         private async Task ReceiveMessage(string message)
         {
             receivedMessage = message;
-            _message.Success(receivedMessage);
+            if (receivedMessage.Contains("failed"))
+            {
+                _message.Error(receivedMessage);
+            }else
+            {
+                _message.Success(receivedMessage);
+            }
             await LoadData(pageIndex, searchComponent.searchTerm, listClassidSelected);
         }
     }

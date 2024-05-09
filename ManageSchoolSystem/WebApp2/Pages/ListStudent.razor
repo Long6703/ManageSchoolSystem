@@ -12,12 +12,12 @@
 <div style="display:flex; justify-content:space-between;margin-bottom:20px">
     <h3>List Student</h3>
     <Button Type="primary" @onclick="_=>openCreate()">Create new student</Button>
-    @* <CreatStudent OnStudentCreated="AfterStudentCreated"></CreatStudent> *@
 </div>
 
 <ListClass OnCheckboxChanged="HandleCheckboxChanged"></ListClass>
 <Searching @ref="searchComponent" TItem="UserViewModel" OnSearchTermChanged="HandleSearchResults"></Searching>
 <Table TItem="UserViewModel" DataSource="list" PageSize="pageSize" PageIndex="pageIndex" Total="totalstudent" OnPageIndexChange="GoToPageAsync">
+    <Column @bind-Field="@context.Index"></Column>
     <Column @bind-Field="@context.DisplayName"></Column>
     <Column @bind-Field="@context.Email" ></Column>
     <Column @bind-Field="@context.ClassName" ></Column>
@@ -44,10 +44,6 @@
     <CreatStudent OnStudentCreated="AfterStudentCreated" SendMessage="ReceiveMessage"></CreatStudent>
 </Drawer>
 
-@* @if (!string.IsNullOrEmpty(receivedMessage))
-{
-    _message.Success(receivedMessage);
-} *@
 
 
 

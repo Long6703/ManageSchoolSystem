@@ -113,6 +113,15 @@ namespace GrpcService.Services
                 UserViewInfo = userViewModel
             });
         }
+
+        public Task<GetStudentCountsByClassReponse> GetStudentCountsByClass(GetStudentCountsByClassRequest request, CallContext context = default)
+        {
+            var data = _userRepo.GetStudentCountsByClass();
+            return Task.FromResult(new GetStudentCountsByClassReponse
+            {
+                studentCountlist = data
+            });
+        }
     }
 }
 

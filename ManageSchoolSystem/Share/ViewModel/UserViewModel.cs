@@ -11,6 +11,8 @@ namespace Share.ViewModel
     [DataContract]
     public class UserViewModel
     {
+        public int Index { get; set; }
+
         [DataMember(Order = 1)]
         public int UserID { get; set; }
 

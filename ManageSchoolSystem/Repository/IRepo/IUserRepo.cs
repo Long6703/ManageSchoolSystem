@@ -18,5 +18,6 @@ namespace Repository.IRepo
         public User GetStudentById(int id);
         public bool DeleteStudent(int id);
         public List<Classs> GetClassses();
+        public List<StudentCount> GetStudentCountsByClass();
     }
 }
